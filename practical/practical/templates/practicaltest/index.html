@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PracticalTest</title>
+
+    <style>
+        body {background-color: yellow;
+        font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    The list of courses provided by the GA program:
+
+    <div>
+        {% if Courses %} 
+            <ul>
+            {% for course in Courses %}
+                <p style="font-size:30px">
+                <strong>{{ course.title }}</strong> <br/>
+                </p>
+                <strong>Starting Date: {{ course.startingdate }}</strong> <br/> <br/>
+                {{ course.description }} <br/> <br/>
+            <br/>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no courses present.</strong>
+        {% endif %}
+    </div>
+</body>
+
+</html>
